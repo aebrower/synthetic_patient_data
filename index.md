@@ -63,6 +63,20 @@ It is a program created by MITRE to generate fully synthetic outputs about patie
 - Due to its easily refinable nature, demographics of the population created by Synthea that do not match real demographics can be modified and refined easily by the creators with help from experts.
 - Synthea models a patients’ entire lifetime rather than a singular encounter, so it can be parameterized in the future to take into account realistic interactions that define health systems (e.g. practices that deviate from standard guidelines and introduce variations in healthcare quality).
 
+## How Synthea Works
+Synthea begins by creating a synthetic population that health records will be created fo. This population is made entirely from publicly available data. 
+Census demographics are used to create the makeup of the population, including race, age, gender and will affect things like how likely someone is to have a certain health condition. In addition to the census data, provider data is incorporated which includes things like hospitals and urgent cares. These providers affect the kind of treatment a patient is likely to receive and the cost. Finally, cost data is incorporated for different treatements, which depending on the demographics of the person and how much the treatment is, could potentially mean they will forgo a certain treatment if they aren't able to afford it.  
+
+Once the synthetic population has been created, each patient will go through all of Synthea's modules. These modules assign a certain probability to how likely a patient is to get a certain condition with some modules being for more complex than others. 
+
+Finally, when all of the setup has been completed the data can be exported into a variety of formats for your use. 
+
+![Image](img/synthea_graph.png)
+
+## Problems with Synthea
+
+Despite Synthea addressing some problems with synthetic data it is still susceptible to certain issues. One of the big issues with Synthea is that it doesn't effectively model deviations in care. There are certain cases where a patient may not follow the normal progression of treatment, like if they can't afford the treatment or the physician just makes a decision to change course. At this point, Synthea is not able to effectively model these changes. As well, the quality of healthcare can vary widely between different providers, which is not incorporated into patient outcomes. This means that Synthea can deviate from actual expectations, and this issue  needs to be considered when you use Synthea. 
+
 # How to use Synthea?
 - Synthea is designed for non-clinical uses where access to real data is not mandatory. It's best used for creating innovative idea, education or testing where clinical data is needed
 - Synthetic data sets are created from the command line where you can specify details about the data that you want to create
