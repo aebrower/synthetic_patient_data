@@ -50,8 +50,9 @@ However, if the original dataset does not contain a lot of data on a small, rura
 - Hard to predict and decrease this risk
 - Rare diseases that do not have much information are still hard to create in synthetic settings.
 
-## What is Synthea?
+# What is Synthea?
 It is a program created by MITRE to generate fully synthetic outputs about patients by accepting only publicly available information and health statistics as inputs.
+
 **Goals of Synthea**
 1. Data generation is based on models of clinical workflow and disease progression, so it can be easily modified and refined.
 2. The temporal aspect of the model covers a synthetic patient’s entire lifetime instead of just a specific disease or condition.
