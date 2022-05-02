@@ -219,7 +219,6 @@ IMMUNIZATIONS:
   2021-03-15 : Hep A, ped/adol, 2 dose
   2020-09-14 : Influenza, seasonal, injectable, preservative free
 --------------------------------------------------------------------------------
-
 ```
 This output is created when the exporter.text.export paramter is true.
 
