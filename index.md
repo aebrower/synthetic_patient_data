@@ -67,10 +67,47 @@ It is a program created by MITRE to generate fully synthetic outputs about patie
 - Synthea is designed for non-clinical uses where access to real data is not mandatory. It's best used for creating innovative idea, education or testing where clinical data is needed
 - Synthetic data sets are created from the command line where you can specify details about the data that you want to create
 
-## Synthea requirments
+## Synthea requirements
 To use Synthea, you will need:
 - Java installed: https://www.java.com/en/
 - To clone Synthea: 
 ```
   git clone https://github.com/synthetichealth/synthea.git
 ```
+
+## Example case
+To create synthetic health records for a population of size 10. Run the following command:
+```
+run_synthea -p 10
+```
+When this command runs each of the patients will run through the 72 modules and 76 submodules that are contained within Synthea. These module determine the health outcomes for the patients. Your output should look like the following:
+
+```
+Running with options:
+Population: 10
+Seed: 1651508269731
+Provider Seed:1651508269731
+Reference Time: 1651508269731
+Location: Massachusetts
+Min Age: 0
+Max Age: 140
+3 -- Alan320 Torphy630 (16 y/o M) Walpole, Massachusetts DECEASED
+7 -- Antoine384 Emmerich580 (22 y/o M) Lexington, Massachusetts
+6 -- Hong136 Kihn564 (45 y/o F) Boston, Massachusetts
+1 -- Lloyd546 Cummings51 (60 y/o M) Saugus, Massachusetts
+5 -- Kathlyn335 Pouros728 (59 y/o F) Attleboro, Massachusetts
+2 -- Abraham100 Leannon79 (65 y/o M) Sudbury, Massachusetts
+4 -- Christian753 Altenwerth646 (66 y/o M) Chelsea, Massachusetts
+8 -- Darrell400 Shields502 (86 y/o M) Somerville, Massachusetts DECEASED
+10 -- Kenneth671 Morar593 (0 y/o M) Boston, Massachusetts
+9 -- Rocco842 Mohr916 (31 y/o M) Turners Falls, Massachusetts
+3 -- Chance908 Runolfsson901 (58 y/o M) Walpole, Massachusetts
+8 -- Genaro214 Volkman526 (66 y/o M) Somerville, Massachusetts DECEASED
+8 -- Sidney996 Herman763 (93 y/o M) Somerville, Massachusetts
+Records: total=13, alive=10, dead=3
+```
+
+Your specific outcome will vary between runs. However, by default 10 years of history for each patient from Massachusetts is created and written to the output files. All the data related to the patients are placed in their own JSON fille in the output/fhir folder. Also included by default is the output relating to the providers and hospitals that will potentially tend to patients. 
+
+
+
