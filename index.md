@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Creation of Synthetic Patient Data 
 
 You can use the [editor on GitHub](https://github.com/aebrower/synthetic_patient_data/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
