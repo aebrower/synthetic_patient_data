@@ -58,7 +58,8 @@ To create synthetic health records for a population of size 10. Run the followin
 ```
 run_synthea -p 10
 ```
-When this command runs each of the patients will run through the 72 modules and 76 submodules that are contained within Synthea. These module determine the health outcomes for the patients. Your output should look like the following:
+When this command runs each of the patients will run through the 72 modules and 76 submodules that are contained within Synthea. These modules determine the health outcomes for the patients. Your 
+should look like the following:
 
 ```
 Running with options:
@@ -85,7 +86,7 @@ Max Age: 140
 Records: total=13, alive=10, dead=3
 ```
 
-Your specific outcome will vary between runs. However, by default 10 years of history for each patient from Massachusetts is created and written to the output files. All the data related to the patients are placed in their own JSON fille in the output/fhir folder. Also included by default is the output relating to the providers and hospitals that will potentially tend to patients. 
+Your specific outcome will vary between runs. However, by default 10 years of history for each patient from Massachusetts is created and written to the output files. All the data related to the patients are placed in their own JSON file in the output/fhir folder. Also included by default is the output relating to the providers and hospitals that will potentially tend to patients. 
 
 
 
@@ -103,7 +104,7 @@ run_synthea -p 10 --exporter.csv.export true
 
 
 
-As well you can create easility readible outputs like this:
+As well you can create easily readable outputs like this:
 ```
 Lissette621 McCullough561
 =========================
@@ -167,17 +168,17 @@ IMMUNIZATIONS:
 --------------------------------------------------------------------------------
 
 ```
-This output is created when the exporter.text.export paramter is true.
+This output is created when the exporter.text.export parameter is true.
 
-As well, specific clinical formats, which can be useful for testing software that will be dealing with clinical data, can be outputed like CPCDS and C-CDA.
+As well, specific clinical formats, which can be useful for testing software that will be dealing with clinical data, can be outputted like CPCDS and C-CDA.
 
-### Patient related paramters
-Beyond just output formats, a number of paramters can be specified to get the patient information that you need. 
+### Patient related parameters
+Beyond just output formats, a number of parameters can be specified to get the patient information that you need. 
 - gender, e.g. -g M
 - age, e.g. -a 60-65
 - include local modules with the localModulesDirPath, -d
 
-As well, beyond the specific command line parameters, you can specify which patients that you want to keep by including a JSON file. This can limit to something like just keeping patients that have had breast cancer. This file should be included using the -k paramter.
+As well, beyond the specific command line parameters, you can specify which patients that you want to keep by including a JSON file. This can limit to something like just keeping patients that have had breast cancer. This file should be included using the -k parameter.
 
 
 
