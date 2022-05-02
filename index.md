@@ -111,3 +111,127 @@ Your specific outcome will vary between runs. However, by default 10 years of hi
 
 
 
+## Parameter options
+
+### Output formats
+A variety of formats can be created to fit your use case. You can create the output in CSV file which will create files including: 
+
+
+
+<table border="0">
+ <tr>
+    <td><li>allergies.csv</li></td>
+    <td><li>claims_transactions.csv</li></td>
+    <td><li>encounters.csv</li></td>
+    <td><li>medications.csv</li></td>
+    <td><li>patients.csv</li></td>
+    
+ </tr>
+ <tr>
+    <td><li>procedures.csv</li></td>
+    <td><li>careplans.csv</li></td>
+    <td><li>conditions.csv</li></td>
+    <td><li>imaging_studies.csv</li></td>
+    <td><li>procedures.csv</li></td>
+ </tr>
+ <tr>
+ <td><li>observations.csv</li></td>
+ <td><li>payer_transitions.csv</li></td>
+ <td><li>providers.csv</li></td>
+ <td><li>devices.csv</li></td>
+ <td><li>immunizations.csv</li><td>                            
+ </tr>
+ <tr>
+    <td><li>organizations.csv</li></td>
+    <td><li>payers.csv</li></td>
+    <td><li>supplies.csv</li></td>               
+ </tr>
+</table>
+
+<br>
+The above outputs will be created when specify true for the exporter.csv.export parameter, like so:
+
+```
+run_synthea -p 10 --exporter.csv.export true
+```
+
+<br>
+
+As well you can create easility readible outputs like this:
+```
+Lissette621 McCullough561
+=========================
+Race:                White
+Ethnicity:           Non-Hispanic
+Gender:              F
+Age:                 3
+Birth Date:          2018-10-08
+Marital Status:      S
+--------------------------------------------------------------------------------
+ALLERGIES:
+No Known Allergies
+--------------------------------------------------------------------------------
+MEDICATIONS:
+  2020-08-28[STOPPED] : Ibuprofen 100 MG Oral Tablet
+  2020-08-28[STOPPED] : Amoxicillin 500 MG Oral Tablet
+--------------------------------------------------------------------------------
+CONDITIONS:
+  2021-10-07 - 2021-10-07 : Febrile neutropenia (disorder)
+  2021-10-07 - 2021-10-07 : Acute myeloid leukemia, disease (disorder)
+  2020-08-28 - 2020-09-11 : Otitis media
+--------------------------------------------------------------------------------
+CARE PLANS:
+--------------------------------------------------------------------------------
+REPORTS:
+  2018-10-08 : Complete blood count (hemogram) panel - Blood by Automated count
+           - Leukocytes [#/volume] in Blood by Automated count 7.7 10*3/uL
+           - Erythrocytes [#/volume] in Blood by Automated count 4.9 10*6/uL
+           - Hemoglobin [Mass/volume] in Blood        14.1 g/dL
+           - Hematocrit [Volume Fraction] of Blood by Automated count 47.1 %
+--------------------------------------------------------------------------------
+OBSERVATIONS:
+  2022-03-14 : Tobacco smoking status NHIS              Never smoker
+  2022-03-14 : Respiratory rate                         12.0 /min
+  2022-03-14 : Heart rate                               75.0 /min
+  2022-03-14 : Blood Pressure
+           - Diastolic Blood Pressure                 81.0 mm[Hg]
+           - Systolic Blood Pressure                  113.0 mm[Hg]
+  2022-03-14 : Body mass index (BMI) [Percentile] Per age and gender 75.2 %
+  2022-03-14 : Body Mass Index                          16.4 kg/m2
+  2022-03-14 : Head Occipital-frontal circumference     45.6 cm
+  2022-03-14 : Weight-for-length Per age and sex        44.1 %
+  2022-03-14 : Body Weight                              13.1 kg
+  2022-03-14 : Pain severity - 0-10 verbal numeric rating [Score] - Reported 0.0 {score}
+  2022-03-14 : Body Height                              89.5 cm
+  2021-10-07 : Body Temperature                         102.1 [degF]
+
+--------------------------------------------------------------------------------
+PROCEDURES:
+  2022-03-14 : Medication Reconciliation (procedure)
+  2021-10-07 : Transfer to stepdown for Acute myeloid leukemia, disease (disorder)
+  2021-10-07 : Chemotherapy (procedure) for Acute myeloid leukemia, disease (disorder)
+  2021-09-13 : Medication Reconciliation (procedure)
+  2019-12-16 : Medication Reconciliation (procedure)
+  2019-01-14 : Medication Reconciliation (procedure)
+--------------------------------------------------------------------------------
+IMMUNIZATIONS:
+  2021-09-13 : Influenza, seasonal, injectable, preservative free
+  2021-03-15 : Hep A, ped/adol, 2 dose
+  2020-09-14 : Influenza, seasonal, injectable, preservative free
+--------------------------------------------------------------------------------
+
+```
+This output is created when the exporter.text.export paramter is true.
+
+As well, specific clinical formats, which can be useful for testing software that will be dealing with clinical data, can be outputed like CPCDS and C-CDA.
+
+### Patient related paramters
+Beyond just output formats, a number of paramters can be specified to get the patient information that you need. 
+- gender, e.g. -g M
+- age, e.g. -a 60-65
+- include local modules with the localModulesDirPath, -d
+
+As well, beyond the specific command line parameters, you can specify which patients that you want to keep by including a JSON file. This can limit to something like just keeping patients that have had breast cancer. This file should be included using the -k paramter.
+
+
+
