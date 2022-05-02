@@ -63,3 +63,14 @@ It is a program created by MITRE to generate fully synthetic outputs about patie
 - Due to its easily refinable nature, demographics of the population created by Synthea that do not match real demographics can be modified and refined easily by the creators with help from experts.
 - Synthea models a patients’ entire lifetime rather than a singular encounter, so it can be parameterized in the future to take into account realistic interactions that define health systems (e.g. practices that deviate from standard guidelines and introduce variations in healthcare quality).
 
+# How to use Synthea?
+- Synthea is designed for non-clinical uses where access to real data is not mandatory. It's best used for creating innovative idea, education or testing where clinical data is needed
+- Synthetic data sets are created from the command line where you can specify details about the data that you want to create
+
+## Synthea requirments
+To use Synthea, you will need:
+- Java installed: https://www.java.com/en/
+- To clone Synthea: 
+```
+  git clone https://github.com/synthetichealth/synthea.git
+```
