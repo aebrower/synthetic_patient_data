@@ -114,48 +114,16 @@ Your specific outcome will vary between runs. However, by default 10 years of hi
 ## Parameter options
 
 ### Output formats
-A variety of formats can be created to fit your use case. You can create the output in CSV file which will create files including: 
+A variety of formats can be created to fit your use case. You can create the output in CSV file which will create files including allergies.csv, providers.csv, medications.csv, patients.csv and encounters.csv among others.
 
 
-
-<table border="0">
- <tr>
-    <td><li>allergies.csv</li></td>
-    <td><li>claims_transactions.csv</li></td>
-    <td><li>encounters.csv</li></td>
-    <td><li>medications.csv</li></td>
-    <td><li>patients.csv</li></td>
-    
- </tr>
- <tr>
-    <td><li>procedures.csv</li></td>
-    <td><li>careplans.csv</li></td>
-    <td><li>conditions.csv</li></td>
-    <td><li>imaging_studies.csv</li></td>
-    <td><li>procedures.csv</li></td>
- </tr>
- <tr>
- <td><li>observations.csv</li></td>
- <td><li>payer_transitions.csv</li></td>
- <td><li>providers.csv</li></td>
- <td><li>devices.csv</li></td>
- <td><li>immunizations.csv</li><td>                            
- </tr>
- <tr>
-    <td><li>organizations.csv</li></td>
-    <td><li>payers.csv</li></td>
-    <td><li>supplies.csv</li></td>               
- </tr>
-</table>
-
-<br>
 The above outputs will be created when specify true for the exporter.csv.export parameter, like so:
 
 ```
 run_synthea -p 10 --exporter.csv.export true
 ```
 
-<br>
+
 
 As well you can create easility readible outputs like this:
 ```
@@ -219,6 +187,7 @@ IMMUNIZATIONS:
   2021-03-15 : Hep A, ped/adol, 2 dose
   2020-09-14 : Influenza, seasonal, injectable, preservative free
 --------------------------------------------------------------------------------
+
 ```
 This output is created when the exporter.text.export paramter is true.
 
